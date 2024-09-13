@@ -1,0 +1,117 @@
+#include <iostream>
+using namespace std;
+/*
+0)
++ S0E CREARA UN MENU CON LA FUNCION DE WHILE Y SE DEJARA INTRODUCCIR UNA RESPUESTA Q PARA EL
+EJERCICIO 1, 2, 3 O SALIR Y AL FINAL DE CADA EJERCICIO SE REGRESA AL MENU. (Con una variable
+bandera como Respuesta != 4)
+
+1)
++ EL USUARIO INGRESA UN NUMERO
++ Se creara if para saber si es divisible por 4.
++ Luego un else if pregutando al s es divisible en 400.
++ Tambien otro if para determinar si el mismo no es divisible por 100 en cuyo caso de cumplir todas
+las metas sera sera aceptado como bisiesto
+
+2)
++ EL USUARIO INGRESA UN NUMERO
++ Se establece una variable en i = 10;
++ Se crea un for (i = 10; i!=0;i--){} donde se mostrara un resultado en pantalla con numeroDelUsuario*i
+
+3)
++ EL USUARIO INGRESA UN NUMERO. Que sea mayor igual a 15 para que el programa empieze y sino se le dice
+que ponga un numero mayor igual a 15.
++  Crear un for (i = 1; i<= numeroDelUsuario; ++).
++ Dentro de ese parametro se crearian if y else if donde se preguntaria si es divisible por 3 y 5, 3 o 5.
+En caso de ser alguno de los tres se imprime en pantalla el fizzbuzz, fizz o buzz pero sino es ninguno de
+estos se imprime el numeroDelUsuario.
+
+
+nota; El ejercicio usa variaciones para el numero ingresado por el usuario de forma provicional
+*/
+
+
+
+
+int main () {
+int Respuesta = 0;
+
+while (Respuesta != 4) {
+///MENU
+cout<<endl<<"Elija alguna de las siguientes funciones"<<endl<<endl;
+
+cout<<"1- Determinar si un anio es bisiesto"<<endl;
+
+cout<<"2- Tabla de multiplicar inversa"<<endl;
+
+cout<<"3- FizzBuzz"<<endl;
+
+cout<<"4- Salir"<<endl<<endl;
+
+cin>>Respuesta;
+
+
+
+///Ejercicio 1 Determinar si un anio es bisiesto
+///Estado sin finalizar, defecto lineas 63-76. El segundo if %100 no es reconocido como verdaero con ejemplo 2024
+if (Respuesta == 1) {
+int numeroDelUsuario;
+cout<<"Ingrese un numero"<<endl;
+cin>>numeroDelUsuario;
+if (numeroDelUsuario%4 == 0) {
+      cout<<"cargando"<<endl; ///Son chequeos de cuan lejos llega a estar parea detectar el error
+    if (numeroDelUsuario%100 == 0) {
+          cout<<"cargando 2"<<endl;///Son chequeos de cuan lejos llega a estar parea detectar el error
+     if (numeroDelUsuario%400 != 0) {
+          cout<<"Es bisiesto"<<endl;
+     }
+else {
+ cout<<"No es bisiesto"<<endl;
+     }
+}else {
+ cout<<"No es bisiesto"<<endl;
+}
+} else {
+cout<<"No es bisiesto"<<endl;
+}
+
+
+
+///Ejercicio 2 Tabla de multiplicar inversa
+if (Respuesta == 2) {
+int NumeroDelUsuario;
+cout<<"Ingrese un numero"<<endl;
+cin>>NumeroDelUsuario;
+for (int i = 10; i != 0;){
+    cout<<endl<<NumeroDelUsuario<<" x "<<i<<" = "<<NumeroDelUsuario*i<<endl;
+    i = i - 1;
+    }
+}
+
+
+///Ejercicio 3 FizzBuzz
+if (Respuesta == 3) {
+int NumeroIngresado;
+cout<<"Ingrese un numero que sea mayor o igual a 15"<<endl;
+cin>>NumeroIngresado;
+
+if (NumeroIngresado >= 15) {
+    for (int i = 1; i<= NumeroIngresado; i++){
+        if (i%3 == 0 && i%5 == 0){
+        cout<<"FizzBuzz"<<endl;
+        }else if (i%3 == 0) {
+        cout<<"Fizz"<<endl;
+        }else if (i%5 == 0) {
+        cout<<"Buzz"<<endl;
+        }else {
+        cout<<i<<endl;
+        }
+    }
+}else {
+cout<<"Su numero debe ser mayor o igual a 15 como minimo para esta funcion"<<endl;
+        }
+    }
+}
+}
+return 0;
+}
